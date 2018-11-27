@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
-import { foodItems } from './../mockData'
+import { foodItems } from './../mockData';
+import {Link} from 'react-router-dom';
 
 
 export default class Market extends Component {
@@ -9,7 +10,9 @@ export default class Market extends Component {
       return (
         <div key={item.id}>
           <img src={item.url} alt="" />
-          <button>See More</button>
+          <Link to={`/market/details/${item.id}`}>
+            <button>See More</button>
+          </Link>
           <hr />
         </div>
       )

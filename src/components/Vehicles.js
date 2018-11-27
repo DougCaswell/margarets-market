@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Nav from './Nav'
+import {Link} from 'react-router-dom';
 
 export default class Vehicles extends Component {
   constructor(props) {
@@ -20,7 +21,9 @@ export default class Vehicles extends Component {
       return <div>
         <p>Make: {car.make}</p>
         <p>Model: {car.model}</p>
-        <button>Details for {car.make} {car.model}</button>
+        <Link to={`/vehicles/details/${car.id}`}>
+          <button>Details for {car.make} {car.model}</button>
+        </Link>
         <hr />
       </div>
     })
